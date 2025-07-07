@@ -183,3 +183,27 @@ h1, h2, h3, h4, h5, h6 {
   background: #b8002e;
   color: #fff;
 }
+
+.signature-service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fbeaec;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px #40000611;
+  padding: 2rem 1.5rem;
+  min-width: 220px;
+  max-width: 270px;
+  text-decoration: none;
+  color: var(--color-burgundy);
+  transition: box-shadow 0.2s, transform 0.2s;
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  border: 1.5px solid #f3d6e0;
+  margin: 0.5rem 0;
+}
+.signature-service-card:hover,
+.signature-service-card:focus {
+  box-shadow: 0 4px 24px #40000633;
+  transform: translateY(-4px) scale(1.03);
+  outline: none;
+}
