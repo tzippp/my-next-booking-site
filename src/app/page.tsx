@@ -32,31 +32,76 @@ export default function Home() {
             filter: 'brightness(0.55) saturate(1.1)',
           }}
         />
+        {/* Overlay for better text contrast */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'linear-gradient(120deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 100%)',
+            zIndex: 2,
+          }}
+        />
         <div
           style={{
             position: 'relative',
-            zIndex: 2,
+            zIndex: 3,
             textAlign: 'center',
             color: '#fff',
             width: '100%',
             padding: '3rem 1rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1.5rem',
           }}
         >
           <h1 style={{
-            fontSize: '2.7rem',
-            fontWeight: 900,
+            fontFamily: 'Playfair Display, Cormorant Garamond, Georgia, serif',
+            fontSize: '3rem',
+            fontWeight: 700,
             marginBottom: '1rem',
             letterSpacing: '1px',
+            color: '#fff',
+            textShadow: '0 2px 16px #00000099',
+            lineHeight: 1.1,
+            maxWidth: 700,
           }}>
             Permanent Makeup in Rockland County
           </h1>
           <p style={{
             fontSize: '1.3rem',
-            fontWeight: 500,
+            fontWeight: 400,
             marginBottom: '2rem',
+            color: '#fbeaec',
+            textShadow: '0 1px 8px #40000666',
+            maxWidth: 520,
+            lineHeight: 1.5,
           }}>
             Enhance your natural beauty with expert care and luxury service.
           </p>
+          <a
+            href="/booking"
+            className="hero-cta"
+            style={{
+              display: 'inline-block',
+              background: 'var(--color-burgundy)',
+              color: '#fff',
+              fontWeight: 600,
+              fontSize: '1.1rem',
+              padding: '0.85rem 2.2rem',
+              borderRadius: '2rem',
+              textDecoration: 'none',
+              boxShadow: '0 2px 12px #40000644',
+              letterSpacing: '1px',
+              transition: 'background 0.2s',
+            }}
+          >
+            Book Now
+          </a>
         </div>
       </section>
 
