@@ -40,6 +40,7 @@ export default function Navbar() {
   return (
     <nav style={{ background: '#111', color: '#fff', padding: '1rem 0', width: '100%' }}>
       <div
+        className="navbar-inner"
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
@@ -52,17 +53,19 @@ export default function Navbar() {
         }}
       >
         <span
+          className="navbar-brand brand-font"
           style={{
             fontSize: '2rem',
             fontWeight: 700,
             color: '#fff',
             letterSpacing: '2px',
             textDecoration: 'none',
-            fontFamily: 'serif',
+            fontFamily: 'Le Major',
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             flexShrink: 0,
+            transition: 'margin 0.3s',
           }}
         >
           <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>
@@ -98,22 +101,25 @@ export default function Navbar() {
           ))}
         </div>
         {/* Hamburger Icon: only show on mobile or when open */}
-        <button
-          className="mobile-hamburger"
-          aria-label="Open navigation menu"
-          onClick={() => setOpen(!open)}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#fff',
-            fontSize: '2rem',
-            cursor: 'pointer',
-            display: 'none',
-            alignItems: 'center',
-          }}
-        >
-          <span style={{ fontSize: '2rem', lineHeight: 1 }}>{open ? '✕' : '☰'}</span>
-        </button>
+        {!open && (
+          <button
+            className="mobile-hamburger"
+            aria-label="Open navigation menu"
+            onClick={() => setOpen(!open)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#fff',
+              fontSize: '2rem',
+              cursor: 'pointer',
+              display: 'none',
+              alignItems: 'center',
+              zIndex: 2200,
+            }}
+          >
+            <span style={{ fontSize: '2rem', lineHeight: 1 }}>☰</span>
+          </button>
+        )}
       </div>
       {/* Mobile Nav: only show when open */}
       {open && (
@@ -136,6 +142,7 @@ export default function Navbar() {
         >
           {/* Top bar with business name and close X */}
           <div
+            className="mobile-nav-top"
             style={{
               width: '100%',
               display: 'flex',
@@ -146,15 +153,18 @@ export default function Navbar() {
             }}
           >
             <span
+              className="navbar-brand brand-font"
               style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 color: '#fff',
                 letterSpacing: '2px',
-                fontFamily: 'serif',
+                fontFamily: 'Le Major',
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
+                marginLeft: 0,
+                transition: 'margin 0.3s',
               }}
             >
               Red Carpet Luxury Spa
@@ -198,6 +208,8 @@ export default function Navbar() {
                   whiteSpace: 'nowrap',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
+                  fontFamily: 'Playfair Display, Georgia, Times New Roman, serif',
+                  letterSpacing: '1px',
                 }}
                 onClick={() => setOpen(false)}
               >

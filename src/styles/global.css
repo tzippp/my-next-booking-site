@@ -1,7 +1,21 @@
 /* src/app/styles/global.css */
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  background: #f9f6f3; /* elegant creamy beige */
+  color: #400006; /* deep burgundy for text */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  color: #400006;
+  font-weight: 700;
+}
+
+:root {
+  --color-burgundy: #400006;
+  --color-beige: #f9f6f3;
+  --color-light-pink: #fbeaec;
 }
 
 /* Responsive stack for welcome section on mobile */
@@ -11,4 +25,149 @@ body {
     gap: 1.5rem !important;
     text-align: center;
   }
+  .navbar-inner {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .navbar-brand {
+    margin-left: 0.2rem !important;
+    font-size: 1.3rem !important;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif !important;
+    letter-spacing: 2px !important;
+    font-weight: 700 !important;
+  }
+  .mobile-nav-top {
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+  }
+}
+
+.bio-main {
+  min-height: 70vh;
+  padding: 3rem 1rem;
+  background: var(--color-beige);
+}
+
+.bio-section {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--color-light-pink);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(64,0,6,0.08);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.bio-artist-img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-burgundy);
+  box-shadow: 0 2px 12px rgba(64,0,6,0.10);
+  background: #fff;
+}
+
+.bio-text {
+  text-align: center;
+}
+
+.bio-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.bio-desc {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #400006;
+  font-family: serif;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .bio-section {
+    padding: 1.2rem 0.5rem;
+  }
+  .bio-title {
+    font-size: 1.5rem;
+  }
+  .bio-desc {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Navbar Styles */
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-hamburger {
+    display: flex !important;
+  }
+}
+@media (min-width: 901px) {
+  .mobile-hamburger {
+    display: none !important;
+  }
+}
+
+/* Font Faces */
+@font-face {
+  font-family: 'Playfair Display SC';
+  src: url('/fonts/PlayfairDisplaySC-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/Cormorant-Garamond-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/Cormorant-Garamond-Light-Italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/Butler-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Le Major';
+  src: url('/fonts/Le-Major-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Le Major';
+  src: url('/fonts/Le-Major.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/helvetica-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.brand-font {
+  font-family: 'Playfair Display SC', 'Cormorant Garamond', 'Butler', 'Le Major', 'Georgia', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
 }

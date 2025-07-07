@@ -19,7 +19,7 @@ export default function Home() {
         }}
       >
         <img
-          src="/assets/images/3-woman-posiing-for-beauty-shoot.png"
+          src="/assets/images/pmu/3-woman-posiing-for-beauty-shoot.png"
           alt="Three women posing for beauty shoot"
           style={{
             position: 'absolute',
@@ -85,7 +85,7 @@ export default function Home() {
           </p>
         </div>
         <img
-          src="/assets/images/pmu-spa-window.png"
+          src="/assets/images/pmu/pmu-spa-window.png"
           alt="Red Carpet Luxury Spa window"
           style={{
             width: '260px',
