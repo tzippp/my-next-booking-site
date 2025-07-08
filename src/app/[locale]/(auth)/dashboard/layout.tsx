@@ -7,8 +7,6 @@ export default async function DashboardLayout(props: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await props.params;
-
   return (
     <BaseTemplate
       leftNav={(

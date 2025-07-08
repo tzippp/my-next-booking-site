@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import ReviewsCarousel from '../components/ReviewsCarousel';
+import Link from 'next/link';
 import MapSection from '../components/MapSection';
+import ReviewsCarousel from '../components/ReviewsCarousel';
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
       fontFamily: 'sans-serif',
       padding: '0',
       background: '#fff',
-    }}>
+    }}
+    >
       {/* Hero Section with Full Background */}
       <section
         style={{
@@ -75,8 +77,11 @@ export default function Home() {
             color: '#fff',
             textShadow: '0 2px 16px #00000099',
             lineHeight: 1.08,
-          }}>
-            Permanent Makeup<br />in Rockland County
+          }}
+          >
+            Permanent Makeup
+            <br />
+            in Rockland County
           </h1>
           <p style={{
             fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif',
@@ -88,10 +93,11 @@ export default function Home() {
             lineHeight: 1.5,
             letterSpacing: '0.2px',
             maxWidth: 480,
-          }}>
+          }}
+          >
             Enhance your natural beauty with expert care and luxury service.
           </p>
-          <a
+          <Link
             href="/booking"
             className="hero-cta"
             style={{
@@ -113,7 +119,7 @@ export default function Home() {
             }}
           >
             Book Now
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -162,7 +168,7 @@ export default function Home() {
           >
             Step into a world of refined beauty and tranquility. At Red Carpet Luxury Spa, our award-winning artists and therapists deliver bespoke permanent makeup and spa experiences in an atmosphere of pure elegance. Discover the art of self-care, where every detail is tailored to you.
           </p>
-          <a
+          <Link
             href="/about"
             style={{
               display: 'inline-block',
@@ -183,7 +189,7 @@ export default function Home() {
             }}
           >
             Learn More
-          </a>
+          </Link>
         </div>
         <img
           src="/assets/images/pmu/pmu-spa-window.png"
@@ -271,7 +277,7 @@ export default function Home() {
               img: '/assets/images/spray tanning/bronzed-tanned-girl.png',
               href: '/services/spray-tanning',
             },
-          ].map((service) => (
+          ].map(service => (
             <a
               key={service.title}
               href={service.href}
@@ -347,4 +353,4 @@ export default function Home() {
       <MapSection />
     </main>
   );
-} 
+}

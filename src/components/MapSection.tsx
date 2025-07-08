@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useRef } from 'react';
 
@@ -21,7 +21,9 @@ export default function MapSection() {
     }
 
     function initMap() {
-      if (!mapRef.current || !(window as any).google) return;
+      if (!mapRef.current || !(window as any).google) {
+        return;
+      }
       const map = new (window as any).google.maps.Map(mapRef.current, {
         center: BUSINESS_LOCATION,
         zoom: 15,
@@ -48,7 +50,7 @@ export default function MapSection() {
       const infoWindow = new (window as any).google.maps.InfoWindow({
         content: `<div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#400006;padding:0.5rem 1rem;background:rgba(255,245,245,0.97);border-radius:1rem;box-shadow:0 2px 12px #40000622;max-width:220px;text-align:center;">
           <strong>${BUSINESS_NAME}</strong><br />${BUSINESS_DESC}
-        </div>`
+        </div>`,
       });
       marker.addListener('click', () => {
         infoWindow.open(map, marker);
@@ -71,7 +73,8 @@ export default function MapSection() {
       flexDirection: 'column',
       alignItems: 'center',
       padding: '2rem 1rem',
-    }}>
+    }}
+    >
       <h2 style={{
         fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif',
         fontSize: '2.1rem',
@@ -79,10 +82,11 @@ export default function MapSection() {
         fontWeight: 500,
         marginBottom: '1.5rem',
         letterSpacing: '0.5px',
-      }}>
+      }}
+      >
         Find Us Here
       </h2>
       <div ref={mapRef} style={{ width: '100%', height: 340, borderRadius: '1.2rem', boxShadow: '0 2px 16px #40000611' }} />
     </section>
   );
-} 
+}

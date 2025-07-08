@@ -33,7 +33,7 @@ This is where you should place all your existing images from your old project.
 
 In the code, you'll see placeholder emojis like this:
 ```jsx
-<div className={styles.imagePlaceholder}>✨</div>
+<div className={styles.imagePlaceholder}>✨</div>;
 ```
 
 Replace them with your actual images like this:
@@ -44,7 +44,7 @@ Replace them with your actual images like this:
   width={400}
   height={300}
   className={styles.yourImageClass}
-/>
+/>;
 ```
 
 ## Image Formats
@@ -62,4 +62,4 @@ Replace them with your actual images like this:
 - Compress images to reduce file size
 - Use descriptive filenames
 - Include alt text for accessibility
-- Consider using Next.js Image component for automatic optimization 
+- Consider using Next.js Image component for automatic optimization

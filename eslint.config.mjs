@@ -70,4 +70,7 @@ export default antfu(
       'test/prefer-lowercase-title': 'off', // Allow using uppercase titles in test titles
     },
   },
+  // --- TEMP: Remove jsdoc plugin due to error ---
+  // import jsdoc from 'eslint-plugin-jsdoc';
+  // jsdoc.configs['flat/recommended'],
 );

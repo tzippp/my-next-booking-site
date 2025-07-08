@@ -3,12 +3,15 @@ type ServicePageProps = {
 };
 
 export default async function ServicePage({ params }: ServicePageProps) {
-  const { serviceId, locale } = params;
+  const { serviceId } = params;
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>Service Details for: {serviceId}</h1>
+      <h1>
+        Service Details for:
+        {serviceId}
+      </h1>
       {/* Add your service info here */}
     </div>
   );
-} 
+}

@@ -1,19 +1,17 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from 'react';
 
-interface Review {
+type Review = {
   author_name: string;
   profile_photo_url: string;
   rating: number;
   relative_time_description: string;
   text: string;
-}
+};
 
-const MAX_REVIEWS = 8;
 const REVIEWS_PER_VIEW_DESKTOP = 3;
 const REVIEWS_PER_VIEW_MOBILE = 1;
-const MAX_LINES = 7;
 
 function useResponsiveReviewsPerView() {
   const [perView, setPerView] = useState(REVIEWS_PER_VIEW_DESKTOP);
@@ -28,20 +26,9 @@ function useResponsiveReviewsPerView() {
   return perView;
 }
 
-function clampText(text: string, maxLines: number) {
-  // Simple clamp by splitting on spaces and limiting to ~maxLines*12 words
-  const words = text.split(' ');
-  const maxWords = maxLines * 12;
-  if (words.length <= maxWords) return {clamped: text, truncated: false};
-  return {clamped: words.slice(0, maxWords).join(' ') + '…', truncated: true};
-}
-
 export default function ReviewsCarousel() {
   const [reviews, setReviews] = useState<Review[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  const [current, setCurrent] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [expanded, setExpanded] = useState<number | null>(null);
   const perView = useResponsiveReviewsPerView();
 
   useEffect(() => {
@@ -68,28 +55,28 @@ export default function ReviewsCarousel() {
         profile_photo_url: 'https://randomuser.me/api/portraits/women/44.jpg',
         rating: 5,
         relative_time_description: '2 weeks ago',
-        text: "Absolutely love my brows! The team is so talented and made me feel pampered from start to finish."
+        text: 'Absolutely love my brows! The team is so talented and made me feel pampered from start to finish.',
       },
       {
         author_name: 'Rachel S.',
         profile_photo_url: 'https://randomuser.me/api/portraits/women/65.jpg',
         rating: 5,
         relative_time_description: '1 month ago',
-        text: 'The lip blush treatment was amazing. My lips look fuller and so natural. Highly recommend!'
+        text: 'The lip blush treatment was amazing. My lips look fuller and so natural. Highly recommend!',
       },
       {
         author_name: 'Emily T.',
         profile_photo_url: 'https://randomuser.me/api/portraits/women/32.jpg',
         rating: 5,
         relative_time_description: '3 weeks ago',
-        text: "Best spray tan I've ever had. The color is perfect and lasted so long!"
+        text: 'Best spray tan I\'ve ever had. The color is perfect and lasted so long!',
       },
       {
         author_name: 'Sarah K.',
         profile_photo_url: 'https://randomuser.me/api/portraits/women/21.jpg',
         rating: 5,
         relative_time_description: '5 days ago',
-        text: 'The fine line tattoo is so delicate and beautiful. The studio is spotless and the staff is wonderful.'
+        text: 'The fine line tattoo is so delicate and beautiful. The studio is spotless and the staff is wonderful.',
       },
     ]);
     setLoading(false);
@@ -99,15 +86,18 @@ export default function ReviewsCarousel() {
   useEffect(() => {
     if (reviews.length > perView) {
       const interval = setInterval(() => {
-        setCurrent((prev) => (prev + perView) % reviews.length);
+        setCurrent(prev => (prev + perView) % reviews.length);
       }, 6000);
       return () => clearInterval(interval);
     }
   }, [reviews, perView]);
 
-  if (loading) return <div style={{textAlign: 'center', color: '#b8002e', fontFamily: 'Cormorant Garamond, serif'}}>Loading reviews…</div>;
-  if (error) return <div style={{textAlign: 'center', color: '#b8002e', fontFamily: 'Cormorant Garamond, serif'}}>{error}</div>;
-  if (!reviews.length) return null;
+  if (loading) {
+    return <div style={{ textAlign: 'center', color: '#b8002e', fontFamily: 'Cormorant Garamond, serif' }}>Loading reviews…</div>;
+  }
+  if (!reviews.length) {
+    return null;
+  }
 
   return (
     <section style={{
@@ -121,7 +111,8 @@ export default function ReviewsCarousel() {
       margin: '2.5rem auto',
       maxWidth: 1100,
       width: '100%',
-    }}>
+    }}
+    >
       <h2 style={{
         fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif',
         fontSize: '2.1rem',
@@ -129,7 +120,8 @@ export default function ReviewsCarousel() {
         fontWeight: 500,
         marginBottom: '2rem',
         letterSpacing: '0.5px',
-      }}>
+      }}
+      >
         Client Reviews
       </h2>
       <div style={{
@@ -140,7 +132,8 @@ export default function ReviewsCarousel() {
         gap: '2.2rem',
         justifyContent: 'center',
         alignItems: 'stretch',
-      }}>
+      }}
+      >
         {reviews.map((review, idx) => (
           <div
             key={idx}
@@ -164,7 +157,10 @@ export default function ReviewsCarousel() {
               style={{ width: 48, height: 48, borderRadius: '50%', border: '2px solid #fff', objectFit: 'cover', marginBottom: 10 }}
             />
             <div style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 600, fontSize: '1.1rem', color: '#fff', marginBottom: 2 }}>{review.author_name}</div>
-            <div style={{ color: '#ffe082', fontSize: '1.1rem', fontWeight: 500, marginBottom: 6 }}>{'★'.repeat(review.rating)}<span style={{ color: '#bbb', marginLeft: 4, fontSize: '0.95rem' }}>{review.relative_time_description}</span></div>
+            <div style={{ color: '#ffe082', fontSize: '1.1rem', fontWeight: 500, marginBottom: 6 }}>
+              {'★'.repeat(review.rating)}
+              <span style={{ color: '#bbb', marginLeft: 4, fontSize: '0.95rem' }}>{review.relative_time_description}</span>
+            </div>
             <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.13rem', color: '#fff', lineHeight: 1.5, marginTop: 8, textAlign: 'center', marginBottom: 6 }}>
               {review.text}
             </div>
@@ -173,4 +169,4 @@ export default function ReviewsCarousel() {
       </div>
     </section>
   );
-} 
+}

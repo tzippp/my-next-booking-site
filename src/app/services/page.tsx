@@ -11,9 +11,9 @@ export default function Services() {
   ];
 
   const iconMap = {
-    eyebrows: <FaStar size={38} color="#bfa14a" style={{ marginBottom: 12 }} />,
-    eyeliner: <FaStar size={38} color="#bfa14a" style={{ marginBottom: 12 }} />,
-    lips: <FaStar size={38} color="#bfa14a" style={{ marginBottom: 12 }} />,
+    'eyebrows': <FaStar size={38} color="#bfa14a" style={{ marginBottom: 12 }} />,
+    'eyeliner': <FaStar size={38} color="#bfa14a" style={{ marginBottom: 12 }} />,
+    'lips': <FaStar size={38} color="#bfa14a" style={{ marginBottom: 12 }} />,
     'fine-line-tattoos': <FaStar size={38} color="#bfa14a" style={{ marginBottom: 12 }} />,
     'scalp-micro-pigmentation': <FaStar size={38} color="#bfa14a" style={{ marginBottom: 12 }} />,
     'spray-tanning': <FaStar size={38} color="#bfa14a" style={{ marginBottom: 12 }} />,
@@ -25,7 +25,8 @@ export default function Services() {
       background: '#f5ebe3',
       fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif',
       padding: '3rem 1rem',
-    }}>
+    }}
+    >
       <h1 style={{
         textAlign: 'center',
         color: '#400006',
@@ -33,7 +34,8 @@ export default function Services() {
         fontWeight: 700,
         marginBottom: '1.2rem',
         letterSpacing: '0.5px',
-      }}>
+      }}
+      >
         Our Services
       </h1>
       <h2 style={{
@@ -47,7 +49,8 @@ export default function Services() {
         maxWidth: 600,
         marginLeft: 'auto',
         marginRight: 'auto',
-      }}>
+      }}
+      >
         Explore our signature beauty treatments—click a service to learn more.
       </h2>
       <div style={{
@@ -57,8 +60,9 @@ export default function Services() {
         justifyContent: 'center',
         maxWidth: '1100px',
         margin: '0 auto',
-      }}>
-        {services.map((service) => (
+      }}
+      >
+        {services.map(service => (
           <a
             key={service.id}
             href={`/services/${service.id}`}
@@ -89,7 +93,10 @@ export default function Services() {
               color: '#400006',
               letterSpacing: '0.2px',
               fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif',
-            }}>{service.title}</span>
+            }}
+            >
+              {service.title}
+            </span>
             <span style={{
               fontSize: '1.02rem',
               fontWeight: 400,
@@ -97,10 +104,13 @@ export default function Services() {
               opacity: 0.92,
               lineHeight: 1.5,
               fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif',
-            }}>{service.description}</span>
+            }}
+            >
+              {service.description}
+            </span>
           </a>
         ))}
       </div>
     </main>
   );
-} 
+}

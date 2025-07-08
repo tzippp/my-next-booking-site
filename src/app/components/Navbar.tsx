@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -99,6 +99,11 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <li>
+            <Link href="/gift-card" style={{ color: 'var(--color-deep-red)', fontWeight: 600 }}>
+              Gift Card
+            </Link>
+          </li>
         </div>
         {/* Hamburger Icon: only show on mobile or when open */}
         {!open && (
@@ -219,7 +224,8 @@ export default function Navbar() {
           </div>
         </div>
       )}
-      <style jsx>{`        @media (max-width: 900px) {
+      <style jsx>
+        {`        @media (max-width: 900px) {
           .desktop-nav {
             display: none !important;
           }
@@ -232,8 +238,8 @@ export default function Navbar() {
             display: none !important;
           }
         }
-      `}</style>
+      `}
+      </style>
     </nav>
   );
 }
-

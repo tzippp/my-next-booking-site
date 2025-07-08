@@ -3,10 +3,7 @@ import { Suspense } from 'react';
 import { CounterForm } from '@/components/CounterForm';
 import { CurrentCount } from '@/components/CurrentCount';
 
-export async function generateMetadata(props: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await props.params;
+export async function generateMetadata() {
   // Removed next-intl imports and usage for single-language setup
 
   return {
@@ -15,7 +12,7 @@ export async function generateMetadata(props: {
   };
 }
 
-export default function Counter() {
+export default async function CounterPage() {
   // Removed next-intl imports and usage for single-language setup
 
   return (

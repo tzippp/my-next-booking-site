@@ -2,7 +2,7 @@ import type { NextConfig } from 'next';
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import './src/libs/Env';
 
-let baseConfig: NextConfig = {
+const baseConfig: NextConfig = {
   eslint: {
     dirs: ['.'],
   },
@@ -15,8 +15,8 @@ let baseConfig: NextConfig = {
 };
 
 // Enable bundle analyzer only if ANALYZE=true
-if (process.env.ANALYZE === 'true') {
-  baseConfig = withBundleAnalyzer({ enabled: true })(baseConfig);
-}
+const finalConfig = process.env.ANALYZE === 'true'
+  ? withBundleAnalyzer({ enabled: true })(baseConfig)
+  : baseConfig;
 
-export default baseConfig;
+export default finalConfig;

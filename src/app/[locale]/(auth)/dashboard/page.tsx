@@ -1,9 +1,6 @@
 // Removed next-intl imports and usage for single-language setup
 
-export async function generateMetadata(props: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await props.params;
+export async function generateMetadata() {
   // Removed next-intl imports and usage for single-language setup
 
   return {
@@ -11,7 +8,7 @@ export async function generateMetadata(props: {
   };
 }
 
-export default function Dashboard() {
+export default function DashboardPage() {
   return (
     <div className="py-5 [&_p]:my-6">
       <Hello />

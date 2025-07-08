@@ -6,4 +6,4 @@ export default function Reviews() {
       {/* Add reviews or testimonials here */}
     </main>
   );
-} 
+}

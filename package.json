@@ -40,6 +40,7 @@
     "@logtape/logtape": "^1.0.1",
     "@t3-oss/env-nextjs": "^0.13.8",
     "drizzle-orm": "^0.44.2",
+    "mongoose": "^8.16.2",
     "next": "^15.3.5",
     "pg": "^8.16.3",
     "posthog-js": "^1.256.1",
