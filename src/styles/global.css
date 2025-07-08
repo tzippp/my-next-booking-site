@@ -14,8 +14,12 @@ h1, h2, h3, h4, h5, h6 {
 
 :root {
   --color-burgundy: #400006;
+  --color-deep-red: #600004;
   --color-beige: #f9f6f3;
   --color-light-pink: #fbeaec;
+  --color-cream: #f5ebe3;
+  --color-black: #000000;
+  --color-white: #ffffff;
 }
 
 /* Responsive stack for welcome section on mobile */
